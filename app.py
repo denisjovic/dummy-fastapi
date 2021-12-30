@@ -5,10 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
     "http://localhost:8000",
-    "http://localhost:5000",
 ]
 
 app.add_middleware(
@@ -18,8 +15,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-import json
 
 class Info(BaseModel):
     name: str
